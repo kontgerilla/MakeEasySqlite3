@@ -23,6 +23,12 @@ class DbWrapper:
         self.__logfile = Log(log)
 
     def ShapeTable(self, paramarr: list, tablename):
+        """
+        :param paramarr: Sütunların olduğu kısım
+        :param tablename: Table'ın adı
+        :return:
+        """
+        # Bu kısım sütun oluşturmaya yarar
         DbOverseer = connect(self.__filename)
         DbCursor = DbOverseer.cursor()
         DbCursor.execute(f"CREATE TABLE {tablename} ({', '.join(paramarr)})")
@@ -31,15 +37,28 @@ class DbWrapper:
         self.__logfile.plog(f"{self.__filename}: Created table {tablename} with variables {paramarr}.")
 
     def AppendLine(self, paramarr, tablename):
+        """
+
+        :param paramarr: bulunan table'a göre veri eklemeye yarar
+        :param tablename: table isim
+        :return:
+        """
+        # Bu kısım table'a yeni veriler eklemeye yarar
         DbOverseer = connect(self.__filename)
         DbCursor = DbOverseer.cursor()
         temp = [f"'{i}'" for i in paramarr]
         DbCursor.execute(f"INSERT INTO {tablename} VALUES ({', '.join(temp)})")
         DbOverseer.commit()
         DbOverseer.close()
-        self.__logfile.plog(f"{self.__filename}: Appended line to table {tablename} with variables {paramarr}.")
+        self.__logfile.plog(f"{self.__filename}: Appended line to table '{tablename}' with variables {paramarr}.")
 
-    def GetTable(self, tablename):
+    def GetTable(self, tablename) -> list:
+        """
+
+        :param tablename:
+        :return: Liste şeklinde veriler dönecek
+        """
+        # Bu kısım bulunan şablondaki tüm veriyi çeker
         DbOverseer = connect(self.__filename)
         DbCursor = DbOverseer.cursor()
         DbCursor.execute(f"SELECT * FROM {tablename}")
@@ -49,6 +68,16 @@ class DbWrapper:
         self.__logfile.plog(f"{self.__filename}: Requested table {tablename}.")
         return LineInfo
     def update_raw(self, tableName, valueThatChange, point, newValue, findBy):
+        """
+
+        :param tableName:
+        :param valueThatChange: Sütun ismi
+        :param point: Neye göre bulunancağının beklenen değeri
+        :param newValue: Yeni veririn ismi
+        :param findBy: Neye göre bulunacağı
+        :return:
+        """
+        # Bu kısım bi değeri değiştirmeye yarıyor
         DbOverseer = connect(self.__filename)
         DbCursor = DbOverseer.cursor()
         DbCursor.execute(f"UPDATE {tableName} SET {valueThatChange} = '{newValue}' WHERE {findBy} = '{point}'")
@@ -57,20 +86,16 @@ class DbWrapper:
         self.__logfile.plog(f"{self.__filename}: Updated value {newValue}.")
 
     def DeleteTable(self, tablename):
+        """
+
+        :param tablename:
+        :return:
+        """
+        # Table'yi silmeye yarar
         DbOverseer = connect(self.__filename)
         DbCursor = DbOverseer.cursor()
         DbCursor.execute(f"DROP TABLE IF EXISTS {tablename}")
         DbOverseer.commit()
         DbOverseer.close()
-        self.__logfile.plog(f"{self.__filename}: Deleted table {tablename}.")
+        self.__logfile.plog(f"{self.__filename}: Deleted table '{tablename}'.")
 
-
-if __name__ == '__main__':
-    fileName = "database.db"
-    logF = "log.txt"
-
-    db = DbWrapper(filename=fileName, log=logF)
-    db.ShapeTable(['uid', 'username', 'password','access'], 'user')
-    # # db.ShapeTable(['uid', 'username', 'password', 'email'], 'users')
-    # db.DeleteTable('Authcode')
-    #db.DeleteTable('user')
