@@ -1,2 +1,3 @@
 # MakeEasySqlite3
-This makes the sqlite3 easy for python
+Python ile sqlite3 için hazır fonksiyonlar içerir.
+
