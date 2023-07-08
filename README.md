@@ -11,9 +11,9 @@ db = MySQL(logfile="./log/log.txt", user="root", host="localhost", pw="", db="bl
 ```
 
 logfile: Hataların kaydedileceği log dosyasının yolu.
-*user*: MySQL kullanıcı adı.
-*host*: MySQL sunucu adresi.
-*pw*: MySQL şifresi.
+*user*: MySQL kullanıcı adı./
+*host*: MySQL sunucu adresi./
+*pw*: MySQL şifresi./
 *db*: Kullanılacak veritabanının adı.
 ## Tablo Oluşturma
 Yeni bir tablo oluşturmak için shape_table yöntemini kullanırız. paramarr parametresi, tablo sütunlarını temsil eden bir liste içerir. Örneğin:
