@@ -15,11 +15,11 @@ logfile="./log/log.txt",
  db="blog")
 ```
 
-logfile: Hataların kaydedileceği log dosyasının yolu.
--**user**: MySQL kullanıcı adı.<br>
--**host**: MySQL sunucu adresi.<br>
--**pw**: MySQL şifresi.<br>
--**db**: Kullanılacak veritabanının adı.
+ -**logfile**: Hataların kaydedileceği log dosyasının yolu.<br>
+ -**user**: MySQL kullanıcı adı.<br>
+ -**host**: MySQL sunucu adresi.<br>
+ -**pw**: MySQL şifresi.<br>
+ -**db**: Kullanılacak veritabanının adı.
 ## Tablo Oluşturma
 Yeni bir tablo oluşturmak için **shape_table** yöntemini kullanırız. paramarr parametresi, tablo sütunlarını temsil eden bir liste içerir. Örneğin:
 
