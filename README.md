@@ -1,12 +1,12 @@
-    # Alacağınız hataları log dosyasına bakarak öğrenebilirsiniz.
+### Alacağınız hataları log dosyasına bakarak öğrenebilirsiniz.
     
-    # Örnek sınıf tanımlama
-    # xampp benzeri uygulamalar kullanarak serveri aktif hale getiriniz. Yoksa bağlantı gerçekleşemez.
-    # var olan bir olan bir log dosyası olmak zorunda değildir. Oluşturulacaktır.
-    print('Databaseye bağlanılıyor')
-    db = MySQL(logfile="./log/log.txt", user="root", host="localhost", pw="", db="blog")
-    print("Databaseye bağlandı")
-    # Örnek Tablo oluşturma, paramarr sutunları ifade ediyor
+# Örnek sınıf tanımlama
+## xampp benzeri uygulamalar kullanarak serveri aktif hale getiriniz. Yoksa bağlantı gerçekleşemez.
+### var olan bir olan bir log dosyası olmak zorunda değildir. Oluşturulacaktır.
+```print('Databaseye bağlanılıyor')```
+```db = MySQL(logfile="./log/log.txt", user="root", host="localhost", pw="", db="blog")```
+```print("Databaseye bağlandı")```
+### Örnek Tablo oluşturma, paramarr sutunları ifade ediyor
     db.shape_table(paramarr=['id','isim','soyisim'], tablename='kullanicilar')
     
     # Tabloya veri ekleme 'kullanicilar' tablosuna. paramarr elemanları sutun sayısı kadar olmak zorunda
