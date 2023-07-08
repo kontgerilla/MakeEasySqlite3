@@ -1,5 +1,3 @@
-markdown
-Copy code
 # MySQL Veritabanı İşlemleri
 
 Bu kod örneği, Python programı aracılığıyla MySQL veritabanında çeşitli işlemleri gerçekleştirmeyi gösterir. Aşağıda kod örneği adım adım açıklanmıştır.
@@ -48,8 +46,8 @@ Tablodaki verileri güncellemek için update_raw yöntemini kullanırız. Bu yö
 
 ```python
 db.update_raw(tablename="kullanicilar", ValueThatChange="soyisim", NewValue="Demir", findBy="id", point="id1")
-Bu kod, "kullanicilar" tablosunda "id" değeri "id1" olan satırların "soyisim" sütununu "Demir" olarak günceller.
 ```
+Bu kod, "kullanicilar" tablosunda "id" değeri "id1" olan satırların "soyisim" sütununu "Demir" olarak günceller.
 
 ## Veri Silme
 Tablodan veri silmek için delete_row yöntemini kullanırız. Bu yöntem, belirli bir koşulu sağlayan satırları siler. Örneğin:
