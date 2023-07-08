@@ -7,14 +7,19 @@ Bu kod örneği, Python programı aracılığıyla MySQL veritabanında çeşitl
 MySQL veritabanına bağlanmak için `MySQL` sınıfını kullanıyoruz. Bağlantı ayarları aşağıdaki gibi yapılmalıdır:
 
 ```python
-db = MySQL(logfile="./log/log.txt", user="root", host="localhost", pw="", db="blog")
+db = MySQL(
+logfile="./log/log.txt",
+ user="root",
+ host="localhost",
+ pw="",
+ db="blog")
 ```
 
 logfile: Hataların kaydedileceği log dosyasının yolu.
-*user*: MySQL kullanıcı adı.<br>
-*host*: MySQL sunucu adresi.<br>
-*pw*: MySQL şifresi.<br>
-*db*: Kullanılacak veritabanının adı.
+**user**: MySQL kullanıcı adı.<br>
+**host**: MySQL sunucu adresi.<br>
+**pw**: MySQL şifresi.<br>
+**db**: Kullanılacak veritabanının adı.
 ## Tablo Oluşturma
 Yeni bir tablo oluşturmak için **shape_table** yöntemini kullanırız. paramarr parametresi, tablo sütunlarını temsil eden bir liste içerir. Örneğin:
 
