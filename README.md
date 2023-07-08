@@ -59,8 +59,8 @@ Tablodan veri silmek için **delete_row** yöntemini kullanırız. Bu yöntem, b
 
 ```python
 db.delete_row(tablename='kullanicilar', colname='id', value='id1')
-Bu kod, "kullanicilar" tablosunda "id" değeri "id1" olan satırları siler.
 ```
+Bu kod, **kullanicilar** tablosunda *id* değeri *id1* olan satırları siler.
 
 ## Tablo Silme
 Tabloyu silmek için **delete_table** yöntemini kullanırız. Örneğin:
