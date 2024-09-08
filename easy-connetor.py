@@ -210,9 +210,9 @@ if __name__ == '__main__':
     db.shape_table(paramarr=['id','isim','soyisim'], tablename='kullanicilar')
     
     # Tabloya veri ekleme 'kullanicilar' tablosuna. paramarr elemanları sutun sayısı kadar olmak zorunda
-    db.append_line(tablename='kullanicilar', paramarr=['id1', 'furkan', 'yıldırım'])
+    db.append_line(tablename='kullanicilar', paramarr=['id1', 'sercam', 'demir'])
     print("veri eklendi")
-    db.append_line(tablename='kullanicilar', paramarr=['id2', 'Metehan', 'Tüfek'])
+    db.append_line(tablename='kullanicilar', paramarr=['id2', 'selehattin', 'akbulut'])
     print("bir veri daha eklendi")
     # Tablodaki verileri alma fonksiyonu 'kulanicilar tablosundan'
     # Geri dönüş değeri liste şeklindedir.
@@ -222,7 +222,7 @@ if __name__ == '__main__':
     print("Veriler alındı")
     # Tablodaki veriyi güncelleme, örnein soyisimi değiştirelim.
     # ValueThatChange : değişecek sutunun isimidir.
-    # NewValue : Sutunda bulunan değerimizin artık yeni değeridir. Mesela Furkan ise önceki değeri Artık Mete diye değişecek gibi.
+    # NewValue : Sutunda bulunan değerimizin artık yeni değeridir. Mesela sercam  ise önceki değeri Artık selehattin diye değişecek gibi.
     # findBy : O satırı hangi sutundaki değere bakılarak bulacağını belirtiyor.
     # point : findBy sutunu içindeki isetnilen değeri ifade ediyor.
     print("Kullancı bilgisi değiştiriliyor")
@@ -241,7 +241,7 @@ if __name__ == '__main__':
     # Tablo içeisinde istenile değeri silmek için kulkanılır.
     # colname : bileln sutun referansı
     # value : sutunun bildiğimiz değeri
-    # örneğin idsini bildiğimiz furkan kullanıcısını silelim
+    # örneğin idsini bildiğimiz sercam kullanıcısını silelim
     print("Bir kullanıcı silindi")
     db.delete_row(tablename='kullanicilar', colname='id', value='id1')
     print(db.get_table(tablename='kullanicilar'))
